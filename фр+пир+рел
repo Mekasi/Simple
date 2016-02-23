@@ -1,0 +1,21 @@
+#define pir 3
+#define rel 5
+#define fr A0
+
+void setup() {
+
+  pinMode(pir, INPUT);
+  pinMode(rel, OUTPUT);
+  pinMode(fr, INPUT);
+}
+
+void loop()
+{
+  if ((digitalRead(pir) == HIGH) && (analogRead(fr) < 600)) {
+    do{
+      digitalWrite(rel, HIGH);
+      }while(digitalRead(pir) == HIGH);
+    } else {
+    digitalWrite(rel, LOW);
+  };
+}
